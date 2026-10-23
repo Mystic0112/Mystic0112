@@ -9,6 +9,9 @@ const OUT_DIR = new URL('../assets/generated/', import.meta.url);
 
 const C = { bg: '#0d1117', panel: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#9198a1', soft: '#b1bac4', red: '#ff4b3e' };
 const MONTHS = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+// Delay base (s) de cada painel no README: simula reveal no scroll, já que o GitHub não roda JS.
+const REVEAL = { contrib: 10.0, stats: 11.2 };
+const WAVE_CYCLE = 11; // s: a onda preenche, segura, apaga e recomeça
 const LEVELS = ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'];
 
 const QUERY = `query($login:String!){user(login:$login){
@@ -76,18 +79,26 @@ const BASE_CSS = `.sans{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica N
 .bar{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) backwards}`;
 const REDUCED = '@media (prefers-reduced-motion:reduce){*{animation:none!important}}';
 
-function frame(w, h, title, desc, css, body) {
+const shiftDelays = (svg, base) => svg.replace(/animation-delay:([^;"]+)/g, (_, v) => `animation-delay:${v.split(',').map((t) => `${(parseFloat(t) + base).toFixed(3)}s`).join(',')}`);
+
+/** reveal = delay base em s: conteúdo começa oculto (só a moldura aparece) e entra depois dele. null = sem reveal. */
+function frame(w, h, title, desc, css, body, reveal = null) {
+  if (reveal !== null) {
+    css += `\n@keyframes rv{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv{animation:rv 1s cubic-bezier(.2,.8,.2,1) ${reveal}s both}.up{animation-delay:${reveal}s}.bar{animation-delay:${(reveal + 0.2).toFixed(1)}s}`;
+    body = `<g class="rv">${shiftDelays(body, reveal)}</g>`;
+  }
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="t d"><title id="t">${esc(title)}</title><desc id="d">${esc(desc)}</desc><style>
 ${BASE_CSS}
 ${css}
 ${REDUCED}
 </style><rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="14" fill="${C.bg}" stroke="${C.border}"/>
-<rect class="bar" x="28" y="0" width="48" height="4" fill="${C.red}"/>
 ${body}
 </svg>
 `;
 }
 
+const TOPBAR = `<rect class="bar" x="28" y="0" width="48" height="4" fill="${C.red}"/>`;
 const label = (x, y, text, { size = 13, cls = 'mono' } = {}) => `<text class="${cls}" x="${x}" y="${y}" font-size="${size}" letter-spacing="2" fill="${C.muted}">${esc(text)}</text>`;
 
 export function renderContribWave({ total, weeks }) {
@@ -99,7 +110,7 @@ export function renderContribWave({ total, weeks }) {
       const d = new Date(`${day.date}T00:00:00Z`).getUTCDay();
       const lvl = Math.max(0, LEVELS.indexOf(day.contributionLevel));
       // Onda: frente diagonal (semana + dia) ondulada por uma senoide ao longo das semanas.
-      const delay = 0.25 + w * 0.024 + d * 0.035 + 0.12 * Math.sin(w / 3.2);
+      const delay = REVEAL.contrib + w * 0.024 + d * 0.035 + 0.12 * Math.sin(w / 3.2);
       const stroke = lvl === 0 ? ` stroke="${C.border}" stroke-width=".6"` : '';
       cells.push(`<rect class="c" x="${X0 + w * P}" y="${Y0 + d * P}" width="${S}" height="${S}" rx="2.5" fill="${LEVEL_FILL[lvl]}"${stroke} style="animation-delay:${delay.toFixed(3)}s"/>`);
     }
@@ -112,9 +123,11 @@ export function renderContribWave({ total, weeks }) {
   const dayLabels = [[1, 'SEG'], [3, 'QUA'], [5, 'SEX']].map(([d, t]) => `<text class="mono" x="28" y="${Y0 + d * P + 10}" font-size="11" letter-spacing="1" fill="${C.muted}">${t}</text>`);
   const legendX = W - 28 - 34 - 5 * P; // caixas entre "MENOS" e "MAIS", alinhadas à direita
   const legend = LEVEL_FILL.map((f, i) => `<rect x="${legendX + i * P}" y="${H - 38}" width="${S}" height="${S}" rx="2.5" fill="${f}"${i === 0 ? ` stroke="${C.border}" stroke-width=".6"` : ''}/>`).join('');
-  const css = `@keyframes wave{0%{opacity:0;transform:scale(.2)}60%{opacity:1;transform:scale(1.3)}100%{opacity:1;transform:scale(1)}}
-.c{transform-box:fill-box;transform-origin:center;animation:wave .55s cubic-bezier(.2,.8,.2,1) backwards}`;
-  const body = `${label(28, 40, 'CONTRIBUIÇÕES  /  ÚLTIMOS 12 MESES', { cls: 'mono up' })}
+  // Um só keyframe infinito: entra em onda, segura a grade cheia, apaga suave e recomeça. O delay de cada
+  // célula (base + posição na onda) só pesa na primeira entrada; moldura, total e meses ficam sempre visíveis.
+  const css = `@keyframes wave{0%{opacity:0;transform:scale(.2)}4%{opacity:1;transform:scale(1.3)}7%,72%{opacity:1;transform:scale(1)}84%{opacity:0;transform:scale(.85)}100%{opacity:0;transform:scale(.2)}}
+.c{transform-box:fill-box;transform-origin:center;animation:wave ${WAVE_CYCLE}s cubic-bezier(.2,.8,.2,1) infinite both}`;
+  const body = `${TOPBAR}${label(28, 40, 'CONTRIBUIÇÕES  /  ÚLTIMOS 12 MESES', { cls: 'mono up' })}
 <text class="sans up" x="${W - 28}" y="44" text-anchor="end" font-size="26" font-weight="800" fill="${C.text}" style="animation-delay:.1s">${fmt(total)}<tspan class="mono" font-size="13" font-weight="400" letter-spacing="2" fill="${C.muted}" dx="10">CONTRIBUIÇÕES</tspan></text>
 ${months.join('')}
 ${dayLabels.join('')}
@@ -139,14 +152,14 @@ export function renderStats({ total, current, longest, repos, stars, langs }) {
     return `<text class="mono up" x="${LX}" y="${y}" font-size="14" fill="${i === 0 ? C.red : C.text}" style="animation-delay:${d}s">${esc(name)}</text><text class="mono up" x="${W - 28}" y="${y}" text-anchor="end" font-size="13" fill="${C.muted}" style="animation-delay:${d}s">${pct.toFixed(1)}%</text>`
       + `<rect x="${LX}" y="${y + 8}" width="${BW}" height="6" rx="3" fill="${C.panel}"/><rect class="bar" x="${LX}" y="${y + 8}" width="${Math.max(6, (pct / top) * BW).toFixed(1)}" height="6" rx="3" fill="${i === 0 ? C.red : mix(C.panel, C.red, 0.55)}" style="animation-delay:${d}s"/>`;
   }).join('');
-  const body = `${label(28, 40, 'ESTATÍSTICAS  /  GITHUB', { cls: 'mono up' })}
+  const body = `${TOPBAR}${label(28, 40, 'ESTATÍSTICAS  /  GITHUB', { cls: 'mono up' })}
 ${left}
 <line x1="452" y1="28" x2="452" y2="${H - 28}" stroke="${C.border}"/>
 ${label(LX, 40, 'LINGUAGENS  /  POR BYTES')}
 ${bars}
 ${starsBlock}`;
   const langDesc = langs.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(', ');
-  return frame(W, H, 'Estatísticas do GitHub', `${total} contribuições no ano, streak atual de ${current} ${dayWord(current)}, maior streak de ${longest} ${dayWord(longest)}, ${repos} repositórios públicos, ${stars} estrelas. Linguagens por bytes: ${langDesc}.`, '', body);
+  return frame(W, H, 'Estatísticas do GitHub', `${total} contribuições no ano, streak atual de ${current} ${dayWord(current)}, maior streak de ${longest} ${dayWord(longest)}, ${repos} repositórios públicos, ${stars} estrelas. Linguagens por bytes: ${langDesc}.`, '', body, REVEAL.stats);
 }
 
 // ---------- execução ----------

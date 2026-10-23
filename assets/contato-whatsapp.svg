@@ -5,5 +5,7 @@
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .up{animation:up .6s cubic-bezier(.2,.8,.2,1) backwards}
 .bar{transform-box:fill-box;transform-origin:left;animation:grow .8s cubic-bezier(.2,.8,.2,1) .2s backwards}
+@keyframes rv{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rv{animation:rv 1s cubic-bezier(.2,.8,.2,1) 13.2s both}.up{animation-delay:13.2s}.bar{animation-delay:13.4s}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
-</style><rect x=".5" y=".5" width="899" height="75" rx="14" fill="#0d1117" stroke="#30363d"/><text class="mono up" font-size="13" letter-spacing="2" fill="#9198a1" x="28" y="44.0">WHATSAPP</text><text class="sans up" x="236" y="44" font-size="18" fill="#e6edf3" style="animation-delay:.08s">Conversar pelo WhatsApp</text><text class="mono up" x="872" y="43.0" text-anchor="end" font-size="13" letter-spacing="2" fill="#ff4b3e" style="animation-delay:.16s">CONVERSAR →</text></svg>
+</style><rect x=".5" y=".5" width="899" height="75" rx="14" fill="#0d1117" stroke="#30363d"/><g class="rv"><text class="mono up" font-size="13" letter-spacing="2" fill="#9198a1" x="28" y="44.0">WHATSAPP</text><text class="sans up" x="236" y="44" font-size="18" fill="#e6edf3" style="animation-delay:13.28s">Conversar pelo WhatsApp</text><text class="mono up" x="872" y="43.0" text-anchor="end" font-size="13" letter-spacing="2" fill="#ff4b3e" style="animation-delay:13.36s">CONVERSAR →</text></g></svg>
