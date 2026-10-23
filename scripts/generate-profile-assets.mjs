@@ -10,7 +10,7 @@ const OUT_DIR = new URL('../assets/generated/', import.meta.url);
 const C = { bg: '#0d1117', panel: '#161b22', border: '#30363d', text: '#e6edf3', muted: '#9198a1', soft: '#b1bac4', red: '#ff4b3e' };
 const MONTHS = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 // Delay base (s) de cada painel no README: simula reveal no scroll, já que o GitHub não roda JS.
-const REVEAL = { contrib: 10.0, stats: 11.2 };
+const REVEAL = { contrib: 5.0, stats: 5.6 };
 const WAVE_CYCLE = 11; // s: a onda preenche, segura, apaga e recomeça
 const LEVELS = ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'];
 
