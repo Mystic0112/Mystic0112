@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="t d"><title id="t">Hélio Vinícius</title><desc id="d">Desenvolvedor backend em PHP e Laravel com integrações de IA, aberto a vaga Júnior. Painel com um array PHP resumindo foco, interesses e disponibilidade.</desc><style>
+.sans{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.up{animation:up .6s cubic-bezier(.2,.8,.2,1) backwards}
+.bar{transform-box:fill-box;transform-origin:left;animation:grow .8s cubic-bezier(.2,.8,.2,1) .2s backwards}
+.blink{animation:blink 1.1s steps(1) infinite}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><rect x=".5" y=".5" width="1199" height="359" rx="14" fill="#0d1117" stroke="#30363d"/>
+<rect x="48" y="52" width="40" height="4" rx="2" fill="#ff4b3e" class="bar"/>
+<text class="mono up" x="48" y="92" font-size="15" letter-spacing="3" fill="#9198a1" style="animation-delay:.1s">MYSTIC0112  /  BACKEND PHP &amp; LARAVEL</text>
+<text class="sans up" x="46" y="176" font-size="80" font-weight="800" fill="#e6edf3" style="animation-delay:.2s">Hélio Vinícius<tspan fill="#ff4b3e">.</tspan></text>
+<text class="sans up" x="48" y="226" font-size="26" font-weight="600" fill="#e6edf3" style="animation-delay:.35s">Backend em PHP e Laravel com integrações de IA.</text>
+<text class="sans up" x="48" y="262" font-size="20" fill="#9198a1" style="animation-delay:.45s">Sistemas multi-serviços, Docker e Kubernetes.</text>
+<g class="up" style="animation-delay:.6s">
+<circle class="pulse" cx="56" cy="314" r="6" fill="#ff4b3e"/>
+<text class="sans" x="74" y="320" font-size="18" font-weight="600" fill="#e6edf3">Aberto a vaga Júnior Backend</text>
+<text class="mono" x="372" y="320" font-size="15" fill="#9198a1">ADS 4º período · Uninassau · 2026</text>
+</g>
+<g class="up" style="animation-delay:.5s">
+<rect x="756" y="56" width="396" height="248" rx="12" fill="#161b22" stroke="#30363d"/>
+<circle cx="780" cy="80" r="5" fill="#30363d"/><circle cx="798" cy="80" r="5" fill="#30363d"/><circle cx="816" cy="80" r="5" fill="#30363d"/>
+<line x1="756" y1="100" x2="1152" y2="100" stroke="#30363d"/>
+</g>
+<text class="mono up" style="animation-delay:0.90s" x="788" y="136" font-size="17" xml:space="preserve"><tspan fill="#9198a1">&lt;?php</tspan></text><text class="mono up" style="animation-delay:1.12s" x="788" y="164" font-size="17" xml:space="preserve"><tspan fill="#e6edf3">$helio</tspan><tspan fill="#9198a1"> = [</tspan></text><text class="mono up" style="animation-delay:1.34s" x="788" y="192" font-size="17" xml:space="preserve"><tspan fill="#b1bac4">  &#x27;foco&#x27;   </tspan><tspan fill="#ff4b3e">=&gt; </tspan><tspan fill="#e6edf3">&#x27;Backend PHP&#x27;</tspan><tspan fill="#9198a1">,</tspan></text><text class="mono up" style="animation-delay:1.56s" x="788" y="220" font-size="17" xml:space="preserve"><tspan fill="#b1bac4">  &#x27;curte&#x27;  </tspan><tspan fill="#ff4b3e">=&gt; </tspan><tspan fill="#e6edf3">[&#x27;IA&#x27;, &#x27;Docker&#x27;]</tspan><tspan fill="#9198a1">,</tspan></text><text class="mono up" style="animation-delay:1.78s" x="788" y="248" font-size="17" xml:space="preserve"><tspan fill="#b1bac4">  &#x27;aberto&#x27; </tspan><tspan fill="#ff4b3e">=&gt; </tspan><tspan fill="#e6edf3">true</tspan><tspan fill="#9198a1">,  // Júnior</tspan></text><text class="mono up" style="animation-delay:2.00s" x="788" y="276" font-size="17" xml:space="preserve"><tspan fill="#9198a1">];</tspan></text>
+<rect class="blink" x="814.4" y="260" width="10" height="20" fill="#ff4b3e"/>
+</svg>
