@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 76" role="img" aria-labelledby="t d"><title id="t">GSH Desktop</title><desc id="d">App desktop em Flutter/Dart. (repositório)</desc><style>
+.sans{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.up{animation:up .6s cubic-bezier(.2,.8,.2,1) backwards}
+.bar{transform-box:fill-box;transform-origin:left;animation:grow .8s cubic-bezier(.2,.8,.2,1) .2s backwards}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><rect x=".5" y=".5" width="899" height="75" rx="14" fill="#0d1117" stroke="#30363d"/><text class="sans up" font-size="19" font-weight="700" fill="#e6edf3" x="28" y="44.0">GSH Desktop</text><text class="sans up" x="236" y="44" font-size="16" fill="#b1bac4" style="animation-delay:.08s">App desktop em Flutter/Dart.</text><text class="mono up" x="872" y="43.0" text-anchor="end" font-size="13" letter-spacing="2" fill="#ff4b3e" style="animation-delay:.16s">REPOSITÓRIO →</text></svg>

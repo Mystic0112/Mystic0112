@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 52" role="img" aria-labelledby="t d"><title id="t">Contato</title><desc id="d">Seção 06: contato.</desc><style>
+.sans{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.up{animation:up .6s cubic-bezier(.2,.8,.2,1) backwards}
+.bar{transform-box:fill-box;transform-origin:left;animation:grow .8s cubic-bezier(.2,.8,.2,1) .2s backwards}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style><text class="mono" x="2" y="35" font-size="14" letter-spacing="3" fill="#9198a1"><tspan fill="#ff4b3e">06</tspan>  /  CONTATO</text><line x1="180" y1="30.5" x2="900" y2="30.5" stroke="#30363d"/></svg>
