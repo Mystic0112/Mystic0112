@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 252" role="img" aria-labelledby="t d"><title id="t">Contribuições no GitHub</title><desc id="d">Grade de contribuições dos últimos 12 meses: 208 contribuições.</desc><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 252" role="img" aria-labelledby="t d"><title id="t">Contribuições no GitHub</title><desc id="d">Grade de contribuições dos últimos 12 meses: 212 contribuições.</desc><style>
 .sans{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
 @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -10,7 +10,7 @@
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style><rect x=".5" y=".5" width="899" height="251" rx="14" fill="#0d1117" stroke="#30363d"/>
 <rect class="bar" x="28" y="0" width="48" height="4" fill="#ff4b3e"/><text class="mono up" x="28" y="40" font-size="13" letter-spacing="2" fill="#9198a1">CONTRIBUIÇÕES  /  ÚLTIMOS 12 MESES</text>
-<text class="sans up" x="872" y="44" text-anchor="end" font-size="26" font-weight="800" fill="#e6edf3" style="animation-delay:.1s">208<tspan class="mono" font-size="13" font-weight="400" letter-spacing="2" fill="#9198a1" dx="10">CONTRIBUIÇÕES</tspan></text>
+<text class="sans up" x="872" y="44" text-anchor="end" font-size="26" font-weight="800" fill="#e6edf3" style="animation-delay:.1s">212<tspan class="mono" font-size="13" font-weight="400" letter-spacing="2" fill="#9198a1" dx="10">CONTRIBUIÇÕES</tspan></text>
 <text class="mono" x="70" y="84" font-size="11" letter-spacing="2" fill="#9198a1">OUT</text><text class="mono" x="175" y="84" font-size="11" letter-spacing="2" fill="#9198a1">DEZ</text><text class="mono" x="235" y="84" font-size="11" letter-spacing="2" fill="#9198a1">JAN</text><text class="mono" x="295" y="84" font-size="11" letter-spacing="2" fill="#9198a1">FEV</text><text class="mono" x="355" y="84" font-size="11" letter-spacing="2" fill="#9198a1">MAR</text><text class="mono" x="430" y="84" font-size="11" letter-spacing="2" fill="#9198a1">ABR</text><text class="mono" x="490" y="84" font-size="11" letter-spacing="2" fill="#9198a1">MAI</text><text class="mono" x="565" y="84" font-size="11" letter-spacing="2" fill="#9198a1">JUN</text><text class="mono" x="625" y="84" font-size="11" letter-spacing="2" fill="#9198a1">JUL</text><text class="mono" x="685" y="84" font-size="11" letter-spacing="2" fill="#9198a1">AGO</text><text class="mono" x="760" y="84" font-size="11" letter-spacing="2" fill="#9198a1">SET</text><text class="mono" x="820" y="84" font-size="11" letter-spacing="2" fill="#9198a1">OUT</text>
 <text class="mono" x="28" y="121" font-size="11" letter-spacing="1" fill="#9198a1">SEG</text><text class="mono" x="28" y="151" font-size="11" letter-spacing="1" fill="#9198a1">QUA</text><text class="mono" x="28" y="181" font-size="11" letter-spacing="1" fill="#9198a1">SEX</text>
 <rect class="c" x="70" y="96" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6" style="animation-delay:5.000s"/>
@@ -383,5 +383,6 @@
 <rect class="c" x="850" y="141" width="12" height="12" rx="2.5" fill="#ff4b3e" style="animation-delay:6.291s"/>
 <rect class="c" x="850" y="156" width="12" height="12" rx="2.5" fill="#ff4b3e" style="animation-delay:6.326s"/>
 <rect class="c" x="850" y="171" width="12" height="12" rx="2.5" fill="#ff4b3e" style="animation-delay:6.361s"/>
+<rect class="c" x="850" y="186" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6" style="animation-delay:6.396s"/>
 <text class="mono" x="755" y="224" text-anchor="end" font-size="11" letter-spacing="1" fill="#9198a1">MENOS</text><rect x="763" y="214" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6"/><rect x="778" y="214" width="12" height="12" rx="2.5" fill="#5c292a"/><rect x="793" y="214" width="12" height="12" rx="2.5" fill="#963531"/><rect x="808" y="214" width="12" height="12" rx="2.5" fill="#cc4038"/><rect x="823" y="214" width="12" height="12" rx="2.5" fill="#ff4b3e"/><text class="mono" x="872" y="224" text-anchor="end" font-size="11" letter-spacing="1" fill="#9198a1">MAIS</text>
 </svg>
