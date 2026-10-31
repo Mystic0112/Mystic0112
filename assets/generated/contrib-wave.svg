@@ -383,5 +383,6 @@
 <rect class="c" x="850" y="141" width="12" height="12" rx="2.5" fill="#5c292a" style="animation-delay:6.291s"/>
 <rect class="c" x="850" y="156" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6" style="animation-delay:6.326s"/>
 <rect class="c" x="850" y="171" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6" style="animation-delay:6.361s"/>
+<rect class="c" x="850" y="186" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6" style="animation-delay:6.396s"/>
 <text class="mono" x="755" y="224" text-anchor="end" font-size="11" letter-spacing="1" fill="#9198a1">MENOS</text><rect x="763" y="214" width="12" height="12" rx="2.5" fill="#161b22" stroke="#30363d" stroke-width=".6"/><rect x="778" y="214" width="12" height="12" rx="2.5" fill="#5c292a"/><rect x="793" y="214" width="12" height="12" rx="2.5" fill="#963531"/><rect x="808" y="214" width="12" height="12" rx="2.5" fill="#cc4038"/><rect x="823" y="214" width="12" height="12" rx="2.5" fill="#ff4b3e"/><text class="mono" x="872" y="224" text-anchor="end" font-size="11" letter-spacing="1" fill="#9198a1">MAIS</text>
 </svg>
